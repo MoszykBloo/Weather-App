@@ -8,7 +8,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="src/style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Vanilla Weather App</title>
+    <title>(New) Weather App</title>
 </head>
 
 <body>
@@ -17,11 +17,14 @@
             <div class="weather-app">
                 <form id="search-form" class="mb-3">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-6">
                             <input type="search" placeholder="Enter a city" class="form-control" id="city-input" />
                         </div>
                         <div class="col-3">
                             <input type="submit" value="Search" class="btn btn-primary w-100" />
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-primary w-100" id="current">Current</button>
                         </div>
                     </div>
                 </form>
