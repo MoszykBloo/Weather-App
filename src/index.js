@@ -45,7 +45,7 @@ function showTemperature(response){
     sensationElement.innerHTML = Math.round(response.data.main.feels_like);
     humidityElement.innerHTML = Math.round(response.data.main.humidity);
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    dateElement.innerHTML = `Last updated: ${formatDate(response.data.dt * 1000)}`;
     iconElement.setAttribute(
         "src", 
         `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -75,12 +75,14 @@ function showForecast(response){
 }
 
 function search(city){
-    let apiKey = "3e43755f9b9e49aaa25fe2da226ada2b";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showTemperature);
+    if(city !== ""){
+        let apiKey = "3e43755f9b9e49aaa25fe2da226ada2b";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(showTemperature);
 
-    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showForecast);
+        apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(showForecast);
+    }
 }
 
 function submiting(event){
@@ -116,5 +118,30 @@ fahrenheitLink.addEventListener("click", showInFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showIncelsius);
+
+function getPosition(position){
+    let latitude = 0;
+    let longitude = 0;
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    let apiKey = "3e43755f9b9e49aaa25fe2da226ada2b";
+    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
+
+  axios
+    .get(
+      `${apiUrl}lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`
+    )
+    .then(showTemperature);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showForecast);
+}
+
+function showCurrentTemp(){
+  navigator.geolocation.getCurrentPosition(getPosition);  
+}
+
+let currentButton = document.querySelector("#current");
+currentButton.addEventListener("click", showCurrentTemp);
 
 search("Mexico");
