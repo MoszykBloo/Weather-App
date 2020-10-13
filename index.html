@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Vanilla Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper-app">
+            <div class="weather-app">
+                <form id="search-form" class="mb-3">
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="search" placeholder="Enter a city" class="form-control" id="city-input" />
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" value="Search" class="btn btn-primary w-100" />
+                        </div>
+                    </div>
+                </form>
+                <div class="col-4" id="current-info">
+                    <div class="overview">
+                        <h1 id="city"></h1>
+                        <ul>
+                            <li id="date"></li>
+                            <li id="description"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="clearfix weather-temperature">
+                            <img src="" alt="" class="float-left" id="icon">
+                            <div class="float-left">
+                                <strong id="temperature"></strong>
+                                <span class="degrees">
+                                    <a href="#" id="celsius-link" class="active">ºC</a> |
+                                    <a href="#" id="fahrenheit-link">ºF</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>Feels like: <span id="sensation"></span>%</li>
+                            <li>Humidity <span id="humidity"></span>%</li>
+                            <li>Wind: <span id="wind"></span> km/h</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" id="forecast-weather">
+                    <div class="col-2">
+                        <h5 class="day">Tue</h5>
+                        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" class="day-icon">
+                        <div class="forecast-temperature">
+                            <h6 class="day-temp"> 16º | <span class="forecast-degrees">25º</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <small>
+                <a href="https://github.com/MoszykBloo/Vanilla-Weather-App" target="blank">Open source code</a> by
+                Monica Camacho
+            </small>
+        </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
