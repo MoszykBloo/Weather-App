@@ -87,5 +87,15 @@ li {
 }
 
 #songs {
-  text-align: center;
+  text-align: end;
+  margin: 50px auto;
+}
+
+.reco-day {
+  color: rgb(56, 56, 56);
+  font-size: 18px;
+}
+.autor {
+  color: rgb(56, 56, 56);
+  font-size: 15px;
 }
