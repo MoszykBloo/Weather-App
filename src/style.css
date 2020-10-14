@@ -4,13 +4,13 @@ body {
   color: rgb(94, 93, 93);
 }
 
-.wrapper-app {
+#wrapper-app {
   border: 0px solid rgba(245, 13, 187, 0.932);
   max-width: 750px;
   margin: 0 auto;
 }
 
-.weather-app {
+#weather-app {
   margin: 0px auto;
   margin-top: 7%;
   border: 2px solid rgb(163, 161, 161);
@@ -83,5 +83,9 @@ li {
 }
 
 .day-temp {
+  text-align: center;
+}
+
+#songs {
   text-align: center;
 }

@@ -13,8 +13,8 @@
 
 <body>
     <div class="container">
-        <div class="wrapper-app">
-            <div class="weather-app">
+        <div id="wrapper-app">
+            <div id="weather-app">
                 <form id="search-form" class="mb-3">
                     <div class="row">
                         <div class="col-6">
@@ -28,13 +28,21 @@
                         </div>
                     </div>
                 </form>
-                <div class="col-4" id="current-info">
-                    <div class="overview">
-                        <h1 id="city"></h1>
-                        <ul>
-                            <li id="date"></li>
-                            <li id="description"></li>
-                        </ul>
+                <div class="row" id="recomendations">
+                    <div class="col-4" id="current-info">
+                        <div class="overview">
+                            <h1 id="city"></h1>
+                            <ul>
+                                <li id="date"></li>
+                                <li id="description"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-8" id="music">
+                        <div class="row" id="songs">
+                            <div class="col-6">Song by day:</div><div class="recos"><span class="reco-day">Wednesday </span>by <span class="autor">Good Morning</span></div>
+                            <div class="col-6">Song by mood:</div> <div class="recos"><span class="reco-day">Rain </span>by <span class="autor">Someone</span></div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
